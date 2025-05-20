@@ -1,27 +1,26 @@
-// Strings Extra 2
+// Operações Extra 2 - Math
 
-// Nesta atividade, você tem o nome de um teorema, dois valores numéricos e uma string incompleta (os trechos a serem preenchidos estão marcados com asteriscos (*)).
-// Realize as tarefas abaixo:
-// 1. Transforme a string de aspas simples em um template literal (crase).
-// 2. Substitua os quatro asteriscos por placeholders de template literal:
-//    - O nome do teorema.
-//    - Os dois valores numéricos fornecidos.
-//    - O comprimento da hipotenusa de um triângulo retângulo, sabendo que os outros dois lados têm os valores fornecidos.
+// Atividade: Escreva variáveis testes para as afirmações abaixo, segundo o exemplo abaixo. Exiba os resultados dos testes no console.
 
-// TODO: Implemente abaixo:
+// Exemplo: "Minha idade (30) é maior que a de meu irmão (25)."
+let minhaIdade = 30;
+let idadeIrmao = 25;
+let resultado: boolean = minhaIdade > idadeIrmao;
+console.log('Minha idade é maior que a de meu irmão?', resultado);
 
-const teorema = 'Teorema de Pitágoras';
-const ladoA = 9;
-const ladoB = 12;
-const hipotenusa = Math.sqrt(ladoA ** 2 + ladoB ** 2); // ladoA^2 + ladoB^2 = hipotenusa^2
+// 1. "O peso de Ana (65) é maior que o de João (60)."
 
-const resultado =
-    '(*): Se um triângulo tem lados de (*) e (*), então a hipotenusa mede (*)';
 
-// Saída esperada:
-// Teorema de Pitágoras: Se um triângulo tem lados de 9 e 12, então a hipotenusa mede 15.
 
-console.log(resultado);
+console.log('Peso de Ana é maior que o de João? ', comparacaoPeso);
+
+// 2. "A altura de Maria (1.70) é igual à de Carla (1.70)."
+
+console.log('Altura de Maria é igual à de Carla? ', comparacaoAltura);
+
+// 3. "A senha digitada (12345678) é igual à senha cadastrada (1234567890)."
+
+console.log('Senha digitada corresponde à senha cadastrada? ', comparacaoSenha);
 
 // Comando para rodar este arquivo: npx tsx src/extra2.ts
 // Comando para verificar o TypeScript: npx eslint src/extra2.ts

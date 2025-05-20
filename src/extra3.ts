@@ -1,23 +1,29 @@
-// Strings Extra 3
+// Operações Extra 3 - Math
 
-// Nesta atividade, você recebe uma citação que está um pouco "quebrada"! Seu objetivo é corrigir e atualizar a frase, seguindo os passos abaixo:
+// Vamos fazer um truque de mágica com números. Reproduza as operações abaixo utilizando variáveis e operações matemáticas.
 
-// 1. Corrija a capitalização para o formato de frase (tudo minúsculo, exceto a primeira letra maiúscula). Armazene o resultado em uma variável chamada fraseCorrigida.
-// 2. Em fraseCorrigida, substitua "banana com canela e tapioca" por outro alimento que você realmente não gosta.
-// 3. Faça mais um pequeno ajuste: adicione um ponto final ao final da frase e salve a versão final em uma variável chamada fraseFinal.
-
-// Dica: use os métodos toLowerCase(), replace(), slice() e concatenação de strings.
-
-// TODO: Implemente abaixo:
-
-const fraseOriginal = 'EU NÃO GOSTO DE BANANA COM CANELA E TAPIOCA';
-let fraseCorrigida: string;
-let fraseFinal: string;
-
-// Seu código aqui 👇
+// 1. Pense em um número. Receba esse número no console e armazene em uma variável. Utilize readlineSync. Veja o exemplo: https://github.com/UFC-Intro-Dev-2025-1/tarefa-variaveis/blob/main/src/exemplo-entrada.ts.
 
 
-console.log(fraseFinal);
+// 2. Some um valor fixo (por exemplo, 5).
+
+
+// 3. Multiplique o resultado por 2.
+
+
+// 4. Subtraia um valor (por exemplo, 4).
+
+
+// 5. Divida por 2.
+
+
+// 6. Subtraia o número que você pensou no início.
+
+
+// Exiba o resultado:
+console.log("O resultado é: ", resultado);
+
+// Conseguiu algum resultado diferente de 3? 😊
 
 // Comando para rodar este arquivo: npx tsx src/extra3.ts
 // Comando para verificar o TypeScript: npx eslint src/extra3.ts

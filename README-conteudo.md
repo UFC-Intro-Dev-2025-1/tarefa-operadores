@@ -1,187 +1,145 @@
-# Variáveis
+# Operadores
 
 <!-- toc -->
 
-- [Trabalhando com texto — strings em JavaScript](#trabalhando-com-texto--strings-em-javascript)
-    - [O poder das palavras](#o-poder-das-palavras)
-    - [Strings — O básico](#strings--o-básico)
-    - [Concatenando strings](#concatenando-strings)
-    - [Conclusão](#conclusão)
-- [Métodos úteis de string](#métodos-úteis-de-string)
-    - [Strings como objetos](#strings-como-objetos)
-    - [Encontrando o comprimento de uma string](#encontrando-o-comprimento-de-uma-string)
-    - [Recuperando um caractere específico de uma string](#recuperando-um-caractere-específico-de-uma-string)
-    - [Testando se uma string contém uma substring](#testando-se-uma-string-contém-uma-substring)
-    - [Encontrando a posição de uma substring em uma string](#encontrando-a-posi%C3%A7%C3%A3o-de-uma-substring-em-uma-string)
-    - [Extraindo uma substring de uma string](#extraindo-uma-substring-de-uma-string)
-    - [Alterando a capitalização](#alterando-a-capitaliza%C3%A7%C3%A3o)
-    - [Atualizando partes de uma string](#atualizando-partes-de-uma-string)
-    - [Exemplos para aprendizado ativo](#exemplos-para-aprendizado-ativo)
-    - [Conclusão](#conclusão-1)
-- [Referências](#referências)
+-   [Operadores em JavaScript](#operadores-em-javascript)
+    -   [Operadores aritméticos](#operadores-aritméticos)
+    -   [Operadores de atribuição](#operadores-de-atribuição)
+    -   [Operadores de comparação](#operadores-de-comparação)
+    -   [Operadores lógicos](#operadores-lógicos)
+    -   [Operadores de tipo](#operadores-de-tipo)
+-   [Matemática em JavaScript](#matemática-em-javascript)
+    -   [Números em JavaScript](#números-em-javascript)
+    -   [Operações matemáticas básicas](#operações-matemáticas-básicas)
+    -   [A ordem das operações](#a-ordem-das-operações)
+    -   [A classe Math](#a-classe-math)
+    -   [Exemplos de uso de Math](#exemplos-de-uso-de-math)
+-   [Referências](#referências)
 
 <!-- toc -->
 
-# Strings — O básico
+## Operadores em JavaScript
 
-Strings são sequências de caracteres usadas para representar texto, que podem ser criadas utilizando aspas simples, duplas ou crases (para templates literais).
+Operadores são usados para realizar operações em variáveis e valores. JavaScript possui diferentes tipos de operadores, como aritméticos, de atribuição, comparação, lógicos e de tipo.
 
-```typescript
-let single = 'Aspas simples';
-let double = 'Aspas duplas';
-let backtick = `Template literal`;
+### Operadores aritméticos
+
+Os operadores aritméticos são usados para realizar operações matemáticas entre números.
+
+| Operador | Descrição     | Exemplo              | Resultado |
+| -------- | ------------- | -------------------- | --------- |
+| +        | Adição        | `let soma = 5 + 2;`  | 7         |
+| -        | Subtração     | `let sub = 5 - 2;`   | 3         |
+| \*       | Multiplicação | `let mult = 5 * 2;`  | 10        |
+| /        | Divisão       | `let div = 5 / 2;`   | 2.5       |
+| %        | Módulo        | `let resto = 5 % 2;` | 1         |
+| ++       | Incremento    | `let x = 5; x++;`    | 6         |
+| --       | Decremento    | `let y = 5; y--;`    | 4         |
+
+### Operadores de atribuição
+
+Os operadores de atribuição atribuem valores às variáveis.
+
+| Operador | Exemplo       | Igual a      |
+| -------- | ------------- | ------------ |
+| =        | `let a = 10;` | 10           |
+| +=       | `a += 5;`     | `a = a + 5;` |
+| -=       | `a -= 2;`     | `a = a - 2;` |
+| \*=      | `a *= 3;`     | `a = a * 3;` |
+| /=       | `a /= 2;`     | `a = a / 2;` |
+| %=       | `a %= 3;`     | `a = a % 3;` |
+
+### Operadores de comparação
+
+Usados para comparar dois valores e retornar verdadeiro ou falso.
+
+| Operador | Descrição              | Exemplo     | Resultado |
+| -------- | ---------------------- | ----------- | --------- |
+| ==       | Igual a                | `5 == "5"`  | true      |
+| ===      | Estritamente igual     | `5 === "5"` | false     |
+| !=       | Diferente de           | `5 != "5"`  | false     |
+| !==      | Estritamente diferente | `5 !== "5"` | true      |
+| >        | Maior que              | `5 > 2`     | true      |
+| <        | Menor que              | `5 < 2`     | false     |
+| >=       | Maior ou igual a       | `5 >= 5`    | true      |
+| <=       | Menor ou igual a       | `5 <= 2`    | false     |
+
+### Operadores lógicos
+
+Permitem combinar valores booleanos.
+
+| Operador | Descrição | Exemplo              | Resultado |
+| -------- | --------- | -------------------- | --------- |
+| &&       | E (AND)   | `(5 > 2 && 3 < 4)`   | true      |
+| \|\|     | OU (OR)   | `(5 < 2 \|\| 3 < 4)` | true      |
+| !        | NÃO (NOT) | `!(5 == 5)`          | false     |
+
+### Operadores de tipo
+
+Permitem verificar ou converter tipos de dados.
+
+| Operador   | Descrição                                 | Exemplo                   | Resultado  |
+| ---------- | ----------------------------------------- | ------------------------- | ---------- |
+| typeof     | Retorna o tipo                            | `typeof "texto"`          | "string"   |
+| instanceof | Retorna verdadeiro se objeto é de um tipo | `objeto instanceof Array` | true/false |
+
+## Matemática em JavaScript
+
+### Números em JavaScript
+
+Em JavaScript, todos os números são representados como números de ponto flutuante de 64 bits. Não há distinção entre inteiros e números de ponto flutuante.
+
+```js
+let idade = 25;
+let altura = 1.75;
 ```
 
-Strings podem conter qualquer caractere Unicode e suportam caracteres especiais como `\n` para nova linha.
+### Operações matemáticas básicas
 
-Se você tem aspas no seu texto, pode usar a barra invertida `\` para escapar as aspas ou usar o outro formato para delimitar a string:
+Você pode realizar operações matemáticas básicas usando operadores aritméticos:
 
-```typescript
-var naruto =
-    '"Trabalho duro" é inútil para aqueles que não acreditam em si mesmos.';
-var aspasNoTexto1 = "Essas são aspas únicas: '";
-var aspasNoTexto2 = "Essas são aspas únicas: '";
+```js
+let soma = 10 + 5; // 15
+let subtracao = 10 - 5; // 5
+let multiplicacao = 10 * 5; // 50
+let divisao = 10 / 5; // 2
+let resto = 10 % 3; // 1
 ```
 
-## Concatenando strings
+### A ordem das operações
 
-Concatenar strings significa uni-las. Isso pode ser feito com o operador `+` ou utilizando templates literais.
+Assim como na matemática tradicional, a ordem das operações é importante. Parênteses podem ser usados para definir a ordem:
 
-```typescript
-let greeting = 'Olá, ';
-let name = 'Mundo';
-let message = greeting + name; // "Olá, Mundo"
-
-let templateMessage = `${greeting}${name}`; // "Olá, Mundo"
+```js
+let resultado1 = 3 + 4 * 5; // 23
+let resultado2 = (3 + 4) * 5; // 35
 ```
 
-Templates literais permitem interpolar variáveis diretamente dentro da string, tornando o código mais legível.
+### A classe Math
 
-# Métodos úteis de string
+O objeto `Math` fornece propriedades e métodos para constantes e funções matemáticas.
 
-Agora que vimos o básico sobre strings, vamos explorar operações úteis que podemos realizar com métodos integrados, como encontrar o comprimento de uma string de texto, juntar e dividir strings, substituir um caractere por outro e muito mais.
-
-## Encontrando o comprimento de uma string
-
-Use a propriedade `length` para obter o número de caracteres em uma string:
-
-```typescript
-const tipoNavegador = 'mozilla';
-tipoNavegador.length; // Retorna 7
+```js
+let raizQuadrada = Math.sqrt(16); // 4
+let potencia = Math.pow(2, 3); // 8
+let aleatorio = Math.random(); // Número aleatório entre 0 e 1
+let arredondado = Math.round(4.7); // 5
+let menor = Math.min(1, 2, 3); // 1
+let maior = Math.max(1, 2, 3); // 3
 ```
 
-## Recuperando um caractere específico de uma string
+### Exemplos de uso de Math
 
-Você pode acessar qualquer caractere dentro de uma string usando a notação de colchetes `[]`:
+```js
+let preco = 19.99;
+let precoArredondado = Math.round(preco); // 20
 
-```typescript
-const tipoNavegador = 'mozilla';
-tipoNavegador[0]; // Retorna 'm'
+let numeroAleatorio = Math.floor(Math.random() * 10); // Inteiro entre 0 e 9
 ```
-
-Para obter o último caractere de qualquer string:
-
-```typescript
-tipoNavegador[tipoNavegador.length - 1];
-```
-
-## Testando se uma string contém uma substring
-
-Para verificar se uma substring está presente dentro de uma string maior, use o método `includes()`:
-
-```typescript
-const tipoNavegador = 'mozilla';
-
-if (tipoNavegador.includes('zilla')) {
-    console.log('Encontrado zilla!');
-} else {
-    console.log('Zilla não encontrado!');
-}
-```
-
-Para verificar se uma string começa ou termina com uma substring específica, use `startsWith()` e `endsWith()`:
-
-```typescript
-tipoNavegador.startsWith('moz'); // Retorna true
-tipoNavegador.endsWith('zilla'); // Retorna true
-```
-
-## Encontrando a posição de uma substring em uma string
-
-Use o método `indexOf()` para encontrar a posição de uma substring dentro de uma string maior:
-
-```typescript
-const slogan = 'Recursos para desenvolvedores';
-console.log(slogan.indexOf('desenvolvedores')); // Retorna 14
-```
-
-Se a substring não for encontrada, `indexOf()` retorna `-1`.
-
-Para encontrar ocorrências subsequentes de uma substring:
-
-```typescript
-const slogan = 'Recursos para desenvolvedores, por desenvolvedores';
-const primeiraOcorrencia = slogan.indexOf('desenvolvedores');
-const segundaOcorrencia = slogan.indexOf(
-    'desenvolvedores',
-    primeiraOcorrencia + 1
-);
-
-console.log(primeiraOcorrencia); // 14
-console.log(segundaOcorrencia); // 35
-```
-
-## Extraindo uma substring de uma string
-
-Você pode extrair partes de uma string usando os métodos `slice()`, `substring()` ou `substr()`:
-
-```typescript
-const nomeCompleto = 'Maria Silva';
-
-// Usando slice
-const primeiroNome = nomeCompleto.slice(0, 5); // "Maria"
-
-// Usando substring
-const sobrenome = nomeCompleto.substring(6); // "Silva"
-```
-
-## Alterando a capitalização
-
-Para converter uma string para letras maiúsculas ou minúsculas, use `toUpperCase()` e `toLowerCase()`:
-
-```typescript
-const saudacao = 'Olá Mundo';
-
-saudacao.toUpperCase(); // "OLÁ MUNDO"
-saudacao.toLowerCase(); // "olá mundo"
-```
-
-## Atualizando partes de uma string
-
-Para substituir partes de uma string, use o método `replace()`:
-
-```typescript
-const frase = 'Eu gosto de maçãs';
-
-const novaFrase = frase.replace('maçãs', 'pizza');
-console.log(novaFrase); // "Eu gosto de pizza" 😏 
-```
-
-Para substituir todas as ocorrências, use uma expressão regular com a flag `g`:
-
-```typescript
-const texto = 'maçã, maçã, maçã';
-const novoTexto = texto.replace(/maçã/g, 'pizza');
-console.log(novoTexto); // "pizza, pizza, pizza"
-```
-
-Expressões regulares são úteis para trabalhar com strings. Se quiser entender mais sobre expressões regulares, veja [este guia na MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_expressions).
-
 
 ## Referências
 
-[qxcodefup/arcade](https://github.com/qxcodefup/arcade)
-
-[Trabalhando com texto — strings em JavaScript](https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Core/Scripting/Strings)
-
-[Métodos úteis de string](https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Core/Scripting/Useful_string_methods)
+[qxcodefup/arcade](https://github.com/qxcodefup/arcade)  
+[W3Schools: JavaScript Operators](https://www.w3schools.com/js/js_operators.asp)  
+[MDN: Matemática em JavaScript](https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Core/Scripting/Math)
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Test_your_skills/Math

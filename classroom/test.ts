@@ -10,14 +10,14 @@ console.log(
 // Teste 1: Verifica o main.ts
 try {
     // testa primeiro se roda
-    const saidaEsperada = 'Ser ou não ser, eis a questão';
     const output = execSync('npm run build').toString();
-    if (output.toString().includes(saidaEsperada)) {
+    // Aceita qualquer saída. Apenas verifica se houve alguma saída, não importa o conteúdo
+    if (output.toString().trim().length > 0) {
         passed++;
-        console.log('✅ main.ts: Saída em texto do código é a esperada.');
+        console.log('✅ main.ts: O código executou e produziu alguma saída.');
     } else {
         console.log(
-            '❌ main.ts: Saída em texto do código não é a esperada: \nSer ou não ser, eis a questão.'
+            '❌ main.ts: O código executou, mas não produziu nenhuma saída.'
         );
     }
 } catch (e) {
@@ -28,9 +28,9 @@ try {
 try {
     // testa primeiro se roda
     const saidaEsperadaExtra1 =
-        'Comprimento do trecho: 18\n' +
-        'Índice do trecho: 25\n' +
-        'Frase revisada: Eu não gosto de spoilers';
+        'Arredondado para baixo: 5\n' +
+        'Arredondado para cima: 6\n' +
+        'Arredondado (padrão): 6';
 
     const output = execSync('npx tsx src/extra1.ts').toString();
     if (output.toString().includes(saidaEsperadaExtra1)) {
@@ -47,7 +47,9 @@ try {
 try {
     // testa primeiro se roda
     const saidaEsperadaExtra2 =
-        'Se um triângulo tem lados de 9 e 12, então a hipotenusa mede 15.';
+        'Peso de Ana é maior que o de João? true\n' +
+        'Altura de Maria é igual à de Carla? true\n' +
+        'Senha digitada corresponde à senha cadastrada? false';
 
     const output = execSync('npx tsx src/extra2.ts').toString();
     if (output.toString().includes(saidaEsperadaExtra2)) {
@@ -63,9 +65,9 @@ try {
 // Teste 4: Verifica o extra3.ts
 try {
     // testa primeiro se roda
-    const saidaEsperadaExtra3 = /Eu não gosto de (.+?)\./i;
+    const saidaEsperadaExtra3 = 'O resultado é: 3';
     const output = execSync('npx tsx src/extra3.ts').toString();
-    if (output.toString().search(saidaEsperadaExtra3) >= 0) {
+    if (output.toString().includes(saidaEsperadaExtra3)) {
         passed++;
         console.log('✅ extra3.ts: Saída em texto do código é a esperada.');
     } else {

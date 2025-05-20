@@ -1,20 +1,11 @@
-// Atividade: Trabalhando com Strings em TypeScript
+// Atividade: Praticando operadores matemáticos em TypeScript
 
-// Você já tem metade de uma citação famosa na variável inicioCitacao.
-// 1. Pesquise a outra metade da citação e adicione na variável fimCitacao.
-// 2. Concatene as duas strings para formar a citação completa na variável citacaoCompleta.
-// 3. Se houver erro, corrija a declaração de inicioCitacao para que a frase final seja exibida corretamente.
-// Inicialize as variáveis abaixo conforme instruções acima.
-
-const inicioCitacao = 'Ser ou não ser,';
-let fimCitacao: string;
-let citacaoCompleta: string;
-
-// Seu código aqui 👇
-
-
-
-console.log(citacaoCompleta); // Deve a citação completa.
+// 1. Crie quatro variáveis que contenham números. Dê nomes significativos a elas.
+// 2. Some as duas primeiras variáveis e armazene o resultado em outra variável.
+// 3. Subtraia a quarta variável da terceira e armazene o resultado em outra variável.
+// 4. Multiplique os resultados dos passos 2 e 3 e armazene o resultado em uma variável chamada resultadoFinal.
+// 5. Verifique se resultadoFinal é um número par usando um dos operadores aritméticos. Armazene o resultado (0 para par, 1 para ímpar) em uma variável chamada resultadoParImpar.
+// Exiba os resultados no console.
 
 // para rodar o código, use o comando:
 // npm run build

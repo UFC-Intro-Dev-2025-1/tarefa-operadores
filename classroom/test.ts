@@ -47,9 +47,9 @@ try {
 try {
     // testa primeiro se roda
     const saidaEsperadaExtra2 =
-        'Peso de Ana é maior que o de João? true\n' +
-        'Altura de Maria é igual à de Carla? true\n' +
-        'Senha digitada corresponde à senha cadastrada? false';
+        'Peso de Ana é maior que o de João?  true\n' +
+        'Altura de Maria é igual à de Carla?  true\n' +
+        'Senha digitada corresponde à senha cadastrada?  false';
 
     const output = execSync('npx tsx src/extra2.ts').toString();
     if (output.toString().includes(saidaEsperadaExtra2)) {
@@ -65,7 +65,7 @@ try {
 // Teste 4: Verifica o extra3.ts
 try {
     // testa primeiro se roda
-    const saidaEsperadaExtra3 = 'O resultado é: 3';
+    const saidaEsperadaExtra3 = 'O resultado é:  3';
     const output = execSync('npx tsx src/extra3.ts').toString();
     if (output.toString().includes(saidaEsperadaExtra3)) {
         passed++;

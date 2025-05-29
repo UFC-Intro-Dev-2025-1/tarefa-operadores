@@ -28,9 +28,9 @@ try {
 try {
     // testa primeiro se roda
     const saidaEsperadaExtra1 =
-        'Arredondado para baixo: 5\n' +
-        'Arredondado para cima: 6\n' +
-        'Arredondado (padrão): 6';
+        'Arredondado para baixo:  5\n' +
+        'Arredondado para cima:  6\n' +
+        'Arredondado (padrão):  6';
 
     const output = execSync('npx tsx src/extra1.ts').toString();
     if (output.toString().includes(saidaEsperadaExtra1)) {
